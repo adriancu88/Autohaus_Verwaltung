@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suchergebnisse</title>
+    <link rel="stylesheet" href="/static/search_styles.css">
+</head>
+<body>
+    <h2>Suchergebnisse</h2>
+    {% if customer_info %}
+        <div class="customer-info">
+            <p><strong>KundeID:</strong> {{ customer_info[0] }}</p>
+            <p><strong>Vorname:</strong> {{ customer_info[1] }}</p>
+            <p><strong>Nachname:</strong> {{ customer_info[2] }}</p>
+            <p><strong>Adresse:</strong> {{ customer_info[3] }}</p>
+            <p><strong>Telefon:</strong> {{ customer_info[4] }}</p>
+            <p><strong>Rechnungsnummer:</strong> {{ customer_info[5] }}</p>
+            <p><strong>Kaufdatum:</strong> {{ customer_info[6] }}</p>
+            <p><strong>Marke:</strong> {{ customer_info[7] }}</p>
+            <p><strong>Modell:</strong> {{ customer_info[8] }}</p>
+            <p><strong>Farbe:</strong> {{ customer_info[9] }}</p>
+            <p><strong>Preis:</strong> {{ customer_info[10] }}</p>
+            <p><strong>Beschreibung:</strong> {{ customer_info[11] }}</p>
+            <p><strong>Kosten:</strong> {{ customer_info[12] }}</p>
+            <p><strong>Datum:</strong> {{ customer_info[13] }}</p>
+        </div>
+    {% else %}
+        <p>Kundenname nicht im System zu finden.</p>
+    {% endif %}
+</body>
+</html>

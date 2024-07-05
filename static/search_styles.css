@@ -1,0 +1,42 @@
+/* search_results.css */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100vh;
+    margin: 0;
+    background-color: #f2f2f2;
+    padding: 20px; /* Abstand um den Rand */
+}
+
+.header {
+    text-align: left;
+    font-size: 24px;
+    padding-bottom: 10px; /* Unten Raum unterhalb des Kopfzeilenbereichs */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px; /* Oben Raum unterhalb des Kopfzeilenbereichs */
+}
+
+.customer-info {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    margin-top: 10px; /* Oben Raum um die Kundendaten */
+}
+
+.customer-info p {
+    margin: 5px 0;
+}
+
+.customer-info p strong {
+    margin-right: 10px;
+}
