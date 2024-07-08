@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import mysql.connector
+import logging
 
 app = Flask(__name__)
 
@@ -10,6 +11,8 @@ db_config = {
     'host': 'localhost',
     'database': 'autohaus_verwaltungssystem',
 }
+
+logging.basicConfig(level=logging.DEBUG)
 
 def get_db_connection():
     conn = mysql.connector.connect(**db_config)
@@ -22,7 +25,8 @@ def index():
 @app.route('/search', methods=['POST'])
 def search():
     search_term = request.form['search_term']
-    
+    logging.debug(f"Received search term: {search_term}")
+
     conn = get_db_connection()
     cursor = conn.cursor()
 
@@ -41,6 +45,7 @@ def search():
 
     cursor.execute(query, params)
     customer_info = cursor.fetchone()
+    logging.debug(f"Query result: {customer_info}")
 
     cursor.close()
     conn.close()
@@ -51,5 +56,4 @@ def search():
         return render_template('search_results.html', not_found=True)
 
 if __name__ == '__main__':
-    app.run(debug=True)
-
+    app.run(debug=True, port=5000)  # Sicherstellen, dass der Flask-Server auf Port 5000 läuft
